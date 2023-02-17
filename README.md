@@ -8,6 +8,7 @@ This Python program uses Tkinter and qrcode libraries to generate and display a 
 
 
 <!-- This is the JavaScript code that detects the user's preference for light/dark mode -->
+
 <script>
   const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
