@@ -6,33 +6,11 @@ This Python program uses Tkinter and qrcode libraries to generate and display a 
 
 
 
-
-<!-- This is the JavaScript code that detects the user's preference for light/dark mode -->
-<script>
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (prefersDarkMode) {
-    document.documentElement.classList.add('dark-mode');
-  }
-</script>
-
-<!-- This is the CSS code that styles the element differently in light/dark mode -->
-<style>
-  .color-toggle {
-    color: #FDFEFE;
-  }
-
-  .dark-mode .color-toggle {
-    color: #0B5345;
-  }
-</style>
-
-
 # Installation :-
 
-<H2><span class="color-toggle">
+<H2>
 Import the qrcode library for generating QR codes
-</H2></span>
+</H2>
 
 <H2>
 Install all required module by :-
@@ -54,9 +32,9 @@ from PIL import ImageTk, Image
 import os
 ```
 <H2>
-<span class="color-toggle">
+
 Create a Tkinter window for user Input
-</H2></span>
+</H2>
 
 An instance of Tkinter ``Tk``
   class is created and assigned to the variable  ``root``
@@ -67,8 +45,8 @@ root = Tk()
 root.title("Input Form")
 root.geometry("400x300")
 ```
-<H2><span class="color-toggle">Add an icon to GUI
-</H2></span>
+<H2>Add an icon to GUI
+</H2>
 
 
 icon is set with ``iconbitmap``
@@ -76,8 +54,8 @@ icon is set with ``iconbitmap``
 root.iconbitmap("icon.ico")
 ```
 
-<H2><span class="color-toggle">
-Add labels and entry boxes for URL and Name input</H2></span>
+<H2>
+Add labels and entry boxes for URL and Name input</H2>
 
 Four instances of Tkinter ``Label`` and ``Entry`` classes are created to display and input the URL and name
 ```bash
@@ -90,8 +68,8 @@ label_name.pack(pady=5)
 input_name = Entry(root)
 input_name.pack(pady=5)
 ```
-<H2><span class="color-toggle">Define a function to get user Input
-</H2></span>
+<H2>Define a function to get user Input
+</H2>
 
 
 A function `get_input()` is defined to get the input values from the user and assign them to global variables `user_input_url` and `user_input_name`
@@ -102,16 +80,16 @@ def get_input():
     user_input_url = input_url.get()
     user_input_name = input_name.get()
 ```
-<H2><span class="color-toggle">If URL not given it will show message
-</H2></span>
+<H2>If URL not given it will show message
+</H2>
     
 ```bash
     if not user_input_url:
         messagebox.showerror("Error", "You have not given URL")
         return
 ```
-<H2><span class="color-toggle">If name not given it will show message 
-</H2></span>
+<H2>If name not given it will show message 
+</H2>
   
 ```bash
     if not user_input_name:
@@ -119,38 +97,38 @@ def get_input():
         return
     
 ```
-<H2><span class="color-toggle">Print the URL and name</H2></span>
+<H2>Print the URL and name</H2>
 
 ```bash
     print("User URL:   ", user_input_url  )
     print("User Name:  ", user_input_name  )
 ```
-<H2><span class="color-toggle">To close the current GUI</H2></span>
+<H2>To close the current GUI</H2>
 
 ```bash
     root.destroy()
 ```
 
-<H2><span class="color-toggle">Add a button to submit user input</H2></span>
+<H2>Add a button to submit user input</H2>
 
 
 ```bash
 submit_button = Button(root, text="Submit", command=get_input)
 submit_button.pack(pady=25)
 ```
-<H2><span class="color-toggle">Run the Tkinter event loop to display the input window</H2></span>
+<H2>Run the Tkinter event loop to display the input window</H2>
 
 ```bash
 root.mainloop()
 ```
-<H2><span class="color-toggle">If name or url not given it will exit</H2></span>
+<H2>If name or url not given it will exit</H2>
 
 ```bash
 if not user_input_url or not user_input_name:
     exit()
 ```
-<H2><span class="color-toggle">Create a QR code using the qrcode library
-</H2></span>
+<H2>Create a QR code using the qrcode library
+</H2>
 
 
 An instance of the ``QRCode`` class is created with version 1, box size 10, and border 5
@@ -174,8 +152,8 @@ Save the QR code as a PNG file named "qr_code.png"
 ```bash
 img.save("qr_code.png")
 ```
-<H2><span class="color-toggle">Create a new Tkinter window to display the QR code
-</H2></span>
+<H2>Create a new Tkinter window to display the QR code
+</H2>
 
 
 A new instance of the `Tk` class is created for displaying the QR code, and assigned to the variable `root_qr`
@@ -190,8 +168,8 @@ Add an icon to GUI
 ```bash
 root_qr.iconbitmap("icon.ico")
 ```
-<H2><span class="color-toggle">Open the saved image and get its width and height
-</H2></span>
+<H2>Open the saved image and get its width and height
+</H2>
 This opens the QR code image file and gets its dimensions, and sets global variables for the width and height.
 ```bash
 with Image.open("qr_code.png") as img:
@@ -201,8 +179,8 @@ with Image.open("qr_code.png") as img:
     Height=(height)
 ```
 
-<H2><span class="color-toggle">Define a function to delete the saved image when the window is closed
-</H2></span>
+<H2>Define a function to delete the saved image when the window is closed
+</H2>
 
 
 This defines a function to delete the QR code image file and close the window when the user closes the window.
@@ -212,8 +190,8 @@ def delete_file_on_close():
     root_qr.destroy()
 ```
 
-<H2><span class="color-toggle">Define a function to prompt the user to select a directory to save the file
-</H2></span>
+<H2>Define a function to prompt the user to select a directory to save the file
+</H2>
 
 
 ``location`` defines a function to prompt the user to select a directory to save the QR code image, and then saves the image as a PNG file in that directory with the specified filename (user's input name + ".png"). It also renames the file from "qr_code.png" to the specified filename.
@@ -224,8 +202,8 @@ def location():
     img.save(f'{fi}/qr_code.png')
 ```
 
-<H2><span class="color-toggle">Rename the saved file to match the user input for the file name
-</H2></span>
+<H2>Rename the saved file to match the user input for the file name
+</H2>
 
 ```bash
     current_file_name = "qr_code.png"
@@ -235,8 +213,8 @@ def location():
     file_path = os.path.join(directory_path, current_file_name)
     os.rename(file_path, os.path.join(directory_path, new_file_name))
 ```
-<H2><span class="color-toggle">Display the image in a Label widget
-</H2></span>
+<H2>Display the image in a Label widget
+</H2>
 
 
 This opens the QR code image file and creates a PhotoImage object for displaying it in the window. It then creates a label with the image and adds a button to save the image using the location function.
@@ -246,8 +224,8 @@ photo = ImageTk.PhotoImage(img)
 label = Label(root_qr, image=photo, width=Width, height=Height,background="white")
 label.pack()
 ```
-<H2><span class="color-toggle">Button
-</H2></span>
+<H2>Button
+</H2>
 
 Add a button to prompt the user to select a directory to save the file
 ```bash
@@ -255,8 +233,8 @@ poke=Button(root_qr,text="save",borderwidth=0,font="20",bg="white",command=locat
 poke.pack(pady=10)
 ```
 
-<H2><span class="color-toggle">Set a function to be called when the window is closed
-</H2></span>
+<H2>Set a function to be called when the window is closed
+</H2>
 
 
 This sets the window protocol to call the delete_file_on_close function when the user closes the window.
@@ -264,8 +242,8 @@ This sets the window protocol to call the delete_file_on_close function when the
 root_qr.protocol("WM_DELETE_WINDOW", delete_file_on_close)
 ```
 
-<H2><span class="color-toggle">Run the Tkinter event loop to display QR code
-</H2></span>
+<H2>Run the Tkinter event loop to display QR code
+</H2>
 
 This starts the main event loop for the window, which handles user interactions with the window and updates its display.
 ```bash
