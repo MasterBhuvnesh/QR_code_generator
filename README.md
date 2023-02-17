@@ -5,30 +5,6 @@
 This Python program uses Tkinter and qrcode libraries to generate and display a QR code in a user-friendly GUI. The user inputs a URL and a name for the QR code, which is then generated and displayed in a new window. The user can save the QR code to their system
 
 
-
-
-<!-- This is the JavaScript code that detects the user's preference for light/dark mode -->
-
-<script>
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (prefersDarkMode) {
-    document.documentElement.classList.add('dark-mode');
-  }
-</script>
-
-<!-- This is the CSS code that styles the element differently in light/dark mode -->
-<style>
-  .color-toggle {
-    color: #FDFEFE;
-  }
-
-  .dark-mode .color-toggle {
-    color: #0B5345;
-  }
-</style>
-
-
 # Installation :-
 
 <H2><span class="color-toggle">
