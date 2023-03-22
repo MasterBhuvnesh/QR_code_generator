@@ -89,16 +89,19 @@ def delete_file_on_close():
 def location():
     desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
     fi=filedialog.askdirectory(title="Where you want to save ?",initialdir=desktop)
-    img.save(f'{fi}/qr_code.png')
-
-    # rename the saved file to match the user input for the file name
-    current_file_name = "qr_code.png"
-    file_name=user_input_name+".png"
-    new_file_name = file_name
-    directory_path = (f'{fi}/')
-    file_path = os.path.join(directory_path, current_file_name)
-    os.rename(file_path, os.path.join(directory_path, new_file_name))
-
+    # using if-else so that if user press cancel in save dialog box it doesn't show error
+    if fi:
+        img.save(f'{fi}/qr_code.png')
+        # rename the saved file to match the user input for the file name
+        current_file_name = "qr_code.png"
+        file_name=user_input_name+".png"
+        new_file_name = file_name
+        directory_path = (f'{fi}/')
+        file_path = os.path.join(directory_path, current_file_name)
+        os.rename(file_path, os.path.join(directory_path, new_file_name))
+    else :
+        print("user doesn't want to save")
+      
 # display the image in a Label widget
 img = Image.open("qr_code.png")
 photo = ImageTk.PhotoImage(img)
