@@ -252,12 +252,12 @@ root_qr.mainloop()
 
 ## Author
 
-- [@BhuvneshKing](https://www.github.com/BhuvneshKing)
+- [@MasterBhuvnesh](https://www.github.com/MasterBhuvnesh)
 
 
 ## Badges
 
-[![Github License](https://img.shields.io/badge/Account-Github-orange)](http://github.com/BhuvneshKing)
+[![Github License](https://img.shields.io/badge/Account-Github-orange)](http://github.com/MasterBhuvnesh)
 
 
 
